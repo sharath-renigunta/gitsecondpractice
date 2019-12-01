@@ -1,0 +1,66 @@
+ Virtual functions are used to implement the concept of late binding i.e. binding actual functions to their calls.
+
+Though C does not allows member functions in structures but C++ allows structures to have member functions. Members of structures are public by default and those of classes are private by default. Classes can have protected data members.
+
+ Object initialization using new keyword involves constructor call whereas malloc does not involve constructor call. That’s why new is explicitly added in C++. Also, malloc is used to assign memory to any pointer hence it assigns memory equals to the size of the class however new keyword involves initialization also hence calls the constructor of that class.
+
+Virtual inheritance is a C++ technique with which it ensures that a derived class contains only one copy of the base class’s variables. Refer Wikipedia for more info.
+
+ The program will result in segmentation fault as we are trying to delete only one pointer variable and leaving other variables as it is which will result in segmentation fault i.e. improper handling of memory.
+
+ Deleting a pointer twice in a program may lead to run-time error or may run perfectly. It depends on the compiler how it handles the situation so the program may compile and run successfully but actually the program should give a run-time error(segmentation fault) as you are trying to access the unauthorized memory of the system.
+
+C++ is strict in type check but C is not and as malloc returns a void* which we are trying to assign to an int*, therefore, the C++ compiler gives error whereas C compiler executes the program successfully.
+
+Name mangling is the process of adding some more information to a function name so that it can be distinguished from other functions by the compiler. This is used when a programmer uses the concept of function overloading in his/her program.
+
+Whenever a destructor is private then one should not define any normal object as it will be destroyed at the end of the program which will call destructor and as destructor is private the program gives error during compile while in case of pointer object the compiler at compile does not know about the object, therefore, does not gives compile error. Hence when the destructor is private then the programmer can declare pointer object but cannot declare a normal object.
+
+Every literal (constant) in C/C++ will have a type information associated with it. ... In C, a character literal is treated as int type where as in C++, a character literal is treated as char type (sizeof('V') and sizeof(char) are same in C++ but not in C).
+
+
+ C++ does not allows a constant object to access any non constant member functions and as getY() is a non constant function and t is a constant object therefore the program gives the error.
+
+A pointer can be implicitly converted to a bool. A nonzero pointer converts to true and zero valued pointer converts to false.
+
+Every character constant has an integer value. Also char belongs to the integral type hence arithmetic and logical operations can be performed on them
+
+ A wide character is always indicated by immediately preceding the character literal by an L.
+
+There are three distinct character types according to the standard: char, signed char and unsigned char.
+
+CHAR_BIT is a macro constant defined in <climits> header file which expresses the number of bits in a character object in bytes.
+
+The size_t type is used to represent the size of an object. Hence, it’s always unsigned. According to the language specification, it is at least 16 bits.
+
+The char has less bytes than int and int has less bytes than double whereas int and float can potentially have same sizes.
+
+char types in C++ require atleast 8 bits and short requires atleast 16 bits, whereas for bool only 1 bit suffices and both int and float requires atleast 32 bits.
+
+Each object in C++ is expressed in terms of char type and size of char type is one byte.
+
+ The value of any variable doesn’t modify inside sizeof operator
+
+ There are no void objects.
+
+The keyword extern is not a definition and is not allocated storage until it is initialized.
+
+Size of any type of pointer is 4 bytes in 32-bit platforms.
+
+Every reference should be initialized during its declaration but as p is not initialized here therfore the program gives error.
+
+ In this case we are trying to assign 30 to a local variable which is returned form the function func() which will be destroyed after the function call hence next time this assignmnet is not correct hence segmentation fault.
+
+the void pointer is used to cast the variables only, So pointer arithmetic can’t be done in a void pointer.
+
+ the dynamic_cast operator is used to convert from base class to derived class.
+
+C99 allows to pass a maximum of 127 arguments in a function.
+
+ Any function which is defined inside a class and has no complex operations like loops, a large number of lines then it is made inline.
+
+When an exception is arisen mean, the exception is caught by handlers and then it decides the type of exception.
+
+As we are throwing integer to double it will raise as abnormal program after termination throw statement.
+
+In Classes objects are self-referenced using this pointer inside the member functions. for example this->value to access the data member value of that object.
